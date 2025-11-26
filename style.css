@@ -1,0 +1,437 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(45deg, blue 40%, #00000DFF 50%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#glass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0.0, 0.0, 0.0, 0.1);
+  backdrop-filter: blur(90px);
+  pointer-events: none;
+}
+
+#panelParametersDisplay {
+  background: #00000066;
+  position: absolute;
+  opacity: 0;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#textDisplay_config {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 0%;
+  font-size: 18px;
+  color: white;
+  opacity: 0;
+  
+  animation: fadeUp 2.5s ease-out 0.8s forwards,
+             textUp 2.0s cubic-bezier(0.33, 1, 0.68, 1) 2.0s forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} 
+@keyframes textUp {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+
+/* CONFIG WITH AND HEIGHT HERE*/
+
+#configPanel {
+  position: relative;
+}
+
+
+.imageSizeConfig {
+  position: absolute;
+  opacity: 0;
+  top: 300px;
+  left: 40px;
+  
+  animation: showImageSizeConfig 0.5s ease 2.7s forwards;
+}
+
+@keyframes showImageSizeConfig {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#widthInputLabel {
+  position: absolute;
+  top: 0px;
+  color: white;
+}
+
+#heightInputLabel {
+  position: absolute;
+  top: 34px;
+  color: white;
+}
+
+#inputWidth {
+  position: absolute;
+  height: 20px;
+  left: 50px;
+  background: #00000066;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00000000;
+  color: #B5FAFFFF;
+  border-radius: 10px;
+}
+
+#inputHeight {
+  position: absolute;
+  height: 20px;
+  top: 32px;
+  left: 56px;
+  background: #00000066;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00000000;
+  color: #B5FAFFFF;
+  border-radius: 10px;
+}
+
+#inputWidth:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+#inputHeight:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* ------------------- */
+
+
+/* Botão para escolher entre cor sólida e Transparente */
+
+.transparentButtonContainer {
+  position: fixed;
+  opacity: 0;
+  top: 380px;
+  left: 40px;
+  animation: showTransparentCheck 0.5s ease 3.0s forwards;
+}
+
+@keyframes showTransparentCheck {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+#transparentLabelButton {
+  color: white;
+}
+
+#inputIsTransparentBg {
+  position: absolute;
+  top: -2px;
+}
+
+/* Botões aqui */
+
+#inputButtonContinue {
+  opacity: 0;
+  width: 270px;
+  height: 60px;
+  font-size: 32px;
+  align-content: center;
+  border: none;
+  border-radius: 32px;
+  background-color: #00000026;
+  backdrop-filter: blur(16px);
+  color: white;
+  position: absolute;
+  top: 500px;
+  left: 86px;
+  
+  transition: scale 0.2s ease;
+  animation: showContinueButton 0.5s ease 3.3s forwards;
+}
+
+@keyframes showContinueButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#inputButtonContinue:hover {
+  scale: 0.9;
+}
+
+
+/* Cenas Aqui */
+
+
+/* animações aqui */
+
+/* ------------------------------ */
+#mainMenu {
+  opacity: 1.0;
+}
+
+@keyframes hide_mainMenu {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0.0;
+  }
+}
+
+/* ------------------------------ */
+
+
+/* Classes que ativam a Animação desejada */
+
+.hideMenu {
+  animation: hide_mainMenu 0.7s ease-in forwards;
+}
+
+
+
+
+/* PanelGradient Menu */
+#GradientMenu {
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Panel: */
+#panelGradientConfig {
+  background: #00000066;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Preview Canvas Container: */
+#previewCanvasContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+#inputIsTransparentBg {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  top: -5px;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(32px);
+  background-color: #00000066;
+  border: 2px solid #00000066;
+}
+
+#inputIsTransparentBg:checked {
+  background-color: #0015FFFF;
+}
+
+/* PreviewCanvas: */
+
+#previewCanvas {
+  
+}
+
+/* Panel Objects GradientMenu: */
+
+#titleGradientTop {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 38px;
+  color: white;
+}
+
+
+#slidersAndColorsContainer {
+  display: flex;
+  position: absolute;
+  top: 530px;
+  left: 86px;
+  align-content: center;
+  align-items: center;
+}
+
+
+#centerLabel {
+  position: relative;
+  left: -60px;
+  color: white;
+}
+
+
+#centerInputColor {
+  position: relative;
+  top: -24px;
+  left: 60px;
+}
+
+/* Radius: */
+
+#radiusValueLabel {
+  position: absolute;
+  top: 176px;
+  left: 15px;
+}
+
+#radiusLabel {
+  position: relative;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  top: -300px;
+  left: -120px;
+  font: italic;
+  color: white;
+}
+
+#radiusInput {
+  position: relative;
+  top: 94px;
+  left: -92px;
+  transform: rotate(-90deg);
+}
+
+#radiusInput[type='range'] {
+  appearance: none;
+  background: #0000007B;
+  backdrop-filter: blur(32px);
+  border-radius: 8px;
+}
+
+
+#radiusInput[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 32px;
+}
+
+
+/* Smooth: */
+
+#smoothValueLabel {
+  position: absolute;
+  top: 176px;
+  left: 19px;
+}
+
+#smoothLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: -300px;
+  left: -6px;
+  font: italic;
+  color: white;
+}
+
+#smoothInput {
+  position: relative;
+  top: 94px;
+  left: -96px;
+  transform: rotate(-90deg);
+}
+
+#smoothInput[type='range'] {
+  appearance: none;
+  background: #0000007B;
+  backdrop-filter: blur(32px);
+  border-radius: 8px;
+}
+
+
+#smoothInput[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 32px;
+}
+
+/* Save Button: */
+
+#saveInputButton {
+  position: relative;
+  top: 89%;
+  left: 16%;
+  font-size: 24px;
+  color: white;
+  width: 270px;
+  height: 60px;
+  border: none;
+  border-radius: 32px;
+  background-color: #0000007F;
+  backdrop-filter: blur(32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: scale 0.2s ease;
+}
+
+#saveInputButton:active {
+  scale: 0.9;
+}
+

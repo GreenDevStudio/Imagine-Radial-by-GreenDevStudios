@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/node_modules/monolith.min.css"
+  <script type="text/javascript" src="cdn_modules/animejs@3.2.2/anime.min.js"></script>
+  <script src="/node_modules/pickr.min.js"></script>
+  <script src="/main.js"></script>
+  
+  
+  <title>Radial Imagine</title>
+</head>
+
+<body>
+  <div id='glass'></div>
+  <div id="mainMenu">
+  <div id='panelParametersDisplay'></div>
+  <div id="textDisplay_config">
+    <h1>SEJA BEM VINDO!</h1>
+    <p>
+      Insira o tamanho da Imagem para começar a personalizar seu Círculo Gradiente :D
+    </p>
+  </div>
+  <div id="configPanel">
+    <div class= "imageSizeConfig">
+     <label id="widthInputLabel">Width:</label>
+     <input type="number" id="inputWidth">
+     <label id="heightInputLabel">Height:</label>
+     <input type="number" id="inputHeight">
+    </div>
+     <div class=transparentButtonContainer>
+     <label id="transparentLabelButton">Transparent:</label>
+     <input type="checkbox" id="inputIsTransparentBg">
+    </div>
+    <button id="inputButtonContinue">Continuar</button>
+  </div>
+  </div>
+  
+  <div id="GradientMenu">
+    <div id="titleGradientTop"><h1>Radial Imagine: Editor</h1></div>
+    <div id=panelGradientConfig>
+      <div id="previewCanvasContainer">
+        <canvas id="previewCanvas"></canvas>
+      </div>
+      <div id="slidersAndColorsContainer">
+        <label id="centerLabel">Color:
+        <div id="centerInputColor"><div class=centerColor></div></div>
+        </label>
+        
+        <label id="radiusLabel">Radius:
+        <label id="radiusValueLabel">0.0</label>
+          <input type=range id="radiusInput" min=0.1 step=0.1 max=2.0 value=1.0>
+        </label>
+        <label id="smoothLabel">Smooth:
+        <label id="smoothValueLabel">0.0</label>
+          <input type=range id="smoothInput" min=0.1 step=0.1 max=2.0 value=1.0>
+        </label>
+      </div>
+      <button id="saveInputButton">Salvar</button>
+      
+    </div>
+  </div>
+  
+</body>
+</html>
